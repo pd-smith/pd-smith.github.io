@@ -1,0 +1,54 @@
+[
+        {   
+            "name" : "Pi Video Server (PiFlix)",
+            "github" : "https://github.com/pd-smith/Video-Server",
+            "desc" : "Utilizing Socket.io and Node.js, PiFlix is the perfect solution for uploading and streaming mp4 videos on your local network. PiFlix was intended to run on a Raspberry Pi connected to your router. All you have to do is visit the Pi's IP in any web browser.",
+            "video" : "https://www.youtube.com/watch?v=g8XQbeLc354",
+            "tech" : [
+                {"name" : "Node.js"},
+                {"name" : "Socket.io"},
+                {"name" : "JavaScript"},
+                {"name" : "HTML"},
+                {"name" : "Raspberry Pi"}
+            ],
+            "thumbnail" : "/src/imgs/piflix.jpg"
+        },
+        {   
+            "name" : "Wizard Ball",
+            "github" : "https://github.com/pd-smith/ProjectWizardBall",
+            "desc" : "A quick real time 4 player game. Wizard Ball was my groups 'Hello World' for web development and server side programming. All programming was approached in an Agile manner.",
+            "video" : "https://www.youtube.com/watch?v=vVgxhU9LqJA",
+            "link" : "https://secret-mountain-2394.herokuapp.com/",
+            "tech" : [
+                {"name" : "Node.js"},
+                {"name" : "Socket.io"},
+                {"name" : "JavaScript"},
+                {"name" : "HTML"},
+                {"name" : "Phaser.io"},
+                {"name" : "JSON"},
+                {"name" : "Heroku"}
+            ],
+            "thumbnail" : "/src/imgs/wizard_ball.png"
+        },
+        {   
+            "name" : "DnD Digitized",
+            "github" : "https://github.com/brueda/Dungeons-and-Dragons",
+            "desc" : "My UB Hacking 2015 project. DnD Digitized was my groups attempt to streamline character sheets and the battle encounters for Dungeons and Dragons.",
+            "tech" : [
+                {"name" : "Java"},
+                {"name" : "JSwing"},
+                {"name" : "JSON"}
+            ],
+            "thumbnail" : "/src/imgs/dnd.jpg"
+        },
+        {   
+            "name" : "OS161",
+            "github" : "https://github.com/pd-smith/os161",
+            "desc" : "Class project for Operating Systems. OS161 is a linux based operating system that we wrote system calls, synchronization primatives, and multithreading for.",
+            "tech" : [
+                {"name" : "C"},
+                {"name" : "GDB"}
+            ],
+            "thumbnail" : "/src/imgs/os161.jpg"
+        }
+    ]

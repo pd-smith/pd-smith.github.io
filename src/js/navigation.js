@@ -7,4 +7,6 @@
          templateUrl : '/src/pages/navigation-bar.html'
        };
     });
+    
+    
 })();

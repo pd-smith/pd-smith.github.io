@@ -1,0 +1,32 @@
+
+<div class="row">
+    <div class="container">
+        <div class="col-md-3 col-sm-6" ng-repeat="project in proj.projects">
+                <div class="thumbnail">
+                    <img class="img-responsive" src="{{project.thumbnail}}">
+                    <div class="caption">
+                        <h3>{{project.name}}</h3>
+                        <p>{{project.desc}}</p>
+                        <p>
+                            <a class="small pull-right" ng-show="project.video" href="{{project.video}}">Video Demo</a>
+                        </p>
+                        <div class="btn-group">
+                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                                Tech Used
+                                <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li class="small" ng-repeat="tech in project.tech">{{tech.name}}</li>
+                            </ul>
+                        </div>
+                       
+                        <p>
+                            <a class="small pull-right" ng-show="project.link" href="{{project.link}}">Project Link</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</div>
+</div>

@@ -1,3 +1,3 @@
 (function(){
-    var app = angular.module("personal-site", ["site-navigation"]);
+    var app = angular.module("personal-site", ['site-navigation','projects']);
 })();
