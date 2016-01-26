@@ -9,7 +9,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container"> 
       <a href="{{proj.curProject.github}}">
-          <h1 class="display-3">{{proj.curProject.name}}<a style="text-decoration:none" ng-show="proj.curProject.video" href="{{proj.curProject.video}}">
+          <h1 class="display-3">{{proj.curProject.name}}<a class="container" style="text-decoration:none" ng-show="proj.curProject.video" href="{{proj.curProject.video}}">
             <span style="text-decoration:none" class="label label-info">Video</span>
       </a>
           <a style="text-decoration:none" ng-show="proj.curProject.demo" href="{{proj.curProject.demo}}">
@@ -22,9 +22,9 @@
     <p class="lead">{{proj.curProject.desc}}</p>
   </div>
     <div class="list-group lead">
-        <a href="#" class="list-group-item active" ng-show="proj.curProject.tech">
+        <a class="list-group-item active" ng-show="proj.curProject.tech">
             Tech Used
           </a>
-          <a href="#" class="list-group-item" ng-repeat="tech in proj.curProject.tech">{{tech.name}}</a>
+          <a class="list-group-item" ng-repeat="tech in proj.curProject.tech">{{tech.name}}</a>
     </div>
 </div>
