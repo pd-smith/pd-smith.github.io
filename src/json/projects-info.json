@@ -18,7 +18,7 @@
             "github" : "https://github.com/pd-smith/ProjectWizardBall",
             "desc" : "A quick real time 4 player game. Wizard Ball was my groups 'Hello World' for web development and server side programming. All programming was approached in an Agile manner.",
             "video" : "https://www.youtube.com/watch?v=vVgxhU9LqJA",
-            "link" : "https://secret-mountain-2394.herokuapp.com/",
+            "demo" : "https://secret-mountain-2394.herokuapp.com/",
             "tech" : [
                 {"name" : "Node.js"},
                 {"name" : "Socket.io"},

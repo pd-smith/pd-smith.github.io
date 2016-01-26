@@ -1,32 +1,30 @@
 
 <div class="row">
     <div class="container">
-        <div class="col-md-3 col-sm-6" ng-repeat="project in proj.projects">
-                <div class="thumbnail">
-                    <img class="img-responsive" src="{{project.thumbnail}}">
-                    <div class="caption">
-                        <h3>{{project.name}}</h3>
-                        <p>{{project.desc}}</p>
-                        <p>
-                            <a class="small pull-right" ng-show="project.video" href="{{project.video}}">Video Demo</a>
-                        </p>
-                        <div class="btn-group">
-                              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-                                Tech Used
-                                <span class="caret"></span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li class="small" ng-repeat="tech in project.tech">{{tech.name}}</li>
-                            </ul>
-                        </div>
-                       
-                        <p>
-                            <a class="small pull-right" ng-show="project.link" href="{{project.link}}">Project Link</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        
+        <div class="" ng-repeat="project in proj.projects">
+            <button class="btn btn-primary" type="submit" ng-click="proj.curProject = project">{{project.name}}</button>                
+        </div>
     </div>
 </div>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container"> 
+      <a href="{{proj.curProject.github}}">
+          <h1 class="display-3">{{proj.curProject.name}}<a style="text-decoration:none" ng-show="proj.curProject.video" href="{{proj.curProject.video}}">
+            <span style="text-decoration:none" class="label label-info">Video</span>
+      </a>
+          <a style="text-decoration:none" ng-show="proj.curProject.demo" href="{{proj.curProject.demo}}">
+            <span style="text-decoration:none" class="label label-success">Demo</span>
+      </a>
+          </h1>
+          
+      </a>
+      
+    <p class="lead">{{proj.curProject.desc}}</p>
+  </div>
+    <div class="list-group lead">
+        <a href="#" class="list-group-item active" ng-show="proj.curProject.tech">
+            Tech Used
+          </a>
+          <a href="#" class="list-group-item" ng-repeat="tech in proj.curProject.tech">{{tech.name}}</a>
+    </div>
 </div>

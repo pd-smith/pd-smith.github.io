@@ -8,6 +8,7 @@
            controller : function(){
                var grid = this;
                grid.projects = [];
+               this.curProject = "";
                $http.get('/src/json/projects-info.json').success(function(response) {
                     grid.projects = response;
                });
