@@ -50,5 +50,24 @@
                 {"name" : "GDB"}
             ],
             "thumbnail" : "/src/imgs/os161.jpg"
+        },
+        {
+            "name": "Siena Information Retrieval Assistant",
+            "desc": "SIRA was designed to parse previous user search queries organized in an XML file and help frame a future search based on what we assume they want to see according to past searches. The focus of our research was to approach the problem keeping in mind what the typical search behaviors of your average user was, with the main hypothesis being that a user could decided if a page was helpful or not in the first 'N%' of the page.
+",
+            "tech" : [
+                {"name":"Java"},
+                {"name":"XML"},
+                {"name":"JSoup"}
+            ]
+        },
+        {
+            "name": "Harvest",
+            "github": "https://github.com/pd-smith/Harvest",
+            "desc" : "A Harvest Moon clone written using libGDX. This project joins my love for video games and learning new things into one project.",
+            "tech" : [
+                {"name":"Java"},
+                {"name":"libGDX"}
+            ]
         }
     ]
