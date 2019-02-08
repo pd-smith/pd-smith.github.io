@@ -7,7 +7,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export && touch out/.nojekyll"
+    "export": "next export && touch out/.nojekyll",
+    "publish": "npm-run-all publish:*",
+    "publish:build": "npm-run-all build export",
+    "publish:push": "git add out && git commit -m \"Deploy to master\" && git subtree push --prefix out origin master"
   },
   "repository": {
     "type": "git",
