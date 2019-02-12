@@ -3,25 +3,21 @@ import App, { Container } from 'next/app';
 import Head from 'next/head';
 import { hydrate, injectGlobal } from 'emotion';
 import styled from '@emotion/styled';
+import { colors, Anchor } from '../components/shared/typography';
 
 const CommonFooter = styled.footer({
-    color: 'white',
+    color: colors.darkgray,
     textAlign: 'center',
     fontSize: '35px',
     position: 'absolute',
-    right: '0',
     bottom: '0',
-    left: '0',
+    width: '100%',
+    height: '50px',
     padding: '20px 0'
 });
 
-const SocialMediaLink = styled.a({
-    color: 'white',
-    padding: '0 5px',
-    ':hover': {
-        color: 'white',
-        textDecoration: 'none'
-    }
+const SocialMediaLink = styled(Anchor)({
+    padding: '0 5px'
 });
 
 function onClientBootstrap() {
@@ -48,8 +44,21 @@ export default class MyApp extends App {
             html, body {
                 font-family: 'Merriweather Sans', sans-serif;
                 line-height: 1;
-                background-color: #247BA0;
-                color: #70C1B3;
+                background-color: ${colors.lightblue};
+                color: ${colors.darkgray};
+            }
+
+            html { 
+                height:100%;
+            }
+            body {
+                min-height:100%;
+                position:relative;
+            }
+            body::after{
+                content:'';
+                height: 100px;
+                display:block;
             }
         `;
     }

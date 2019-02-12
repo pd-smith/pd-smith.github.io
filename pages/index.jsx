@@ -1,13 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from '@emotion/styled';
+import { colors } from '../components/shared/typography';
+import Header from '../components/shared/header';
 
 const MainIntroContainer = styled.div({
     paddingTop: '150px'
 });
 
 const AccentBreak = styled.hr({
-    borderColor: '#F25F5C',
+    borderColor: colors.seablue,
     maxWidth: '100px',
     margin: '0 auto 0 0',
     display: 'inherit'
@@ -15,11 +17,11 @@ const AccentBreak = styled.hr({
 
 const NameHeader = styled.h2({
     margin: '5px 0',
-    color: '#FFE066'
+    color: colors.darkblue
 });
 const TitleHeader = styled.h1({
     margin: '5px 0',
-    color: '#FFE066'
+    color: colors.darkblue
 });
 
 const SubText = styled.p({
@@ -36,6 +38,7 @@ const IndexPage = () => (
         <Head>
             <title>Pat Smith</title>
         </Head>
+        <Header currentPageHref="/" />
         <MainIntroContainer>
             <IntroBlock>
                 <NameHeader>PAT SMITH</NameHeader>

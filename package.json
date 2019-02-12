@@ -10,7 +10,7 @@
     "export": "next export && touch out/.nojekyll",
     "publish": "npm-run-all publish:*",
     "publish:build": "npm-run-all build export",
-    "publish:push": "git add out && git commit -m \"Deploy to master\" && git subtree push --prefix out origin master"
+    "publish:push": "git add out && git commit -m \"Deploy to master\" && git push origin `git subtree split --prefix out build-branch`:master --force"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "react-dom": "^16.8.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.13.0",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-import": "^2.16.0",
