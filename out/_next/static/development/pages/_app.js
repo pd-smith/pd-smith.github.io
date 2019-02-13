@@ -14,20 +14,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/styled.browser.esm.js");
 
 var colors = Object.freeze({
-  darkgray: '#2E3030',
+  darkgray: '#393939',
   lightblue: '#F2F5F9',
   seablue: '#47C1C3',
   darkblue: '#17325B',
-  red: '#DB202C',
-  lightbrown: '#D97844'
+  red: '#E85143',
+  blue: '#2D79DF',
+  honeyyellow: '#FFB800',
+  lightbrown: '#D97844',
+  lightgray: '#FAFAFA',
+  coolpurple: '#4B36DF',
+  darkpurple: '#231B43',
+  darkpurpleHover: '#4024D4'
 });
-var Anchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0__["default"].a({
-  cursor: 'pointer',
-  color: colors.darkblue,
-  ':hover': {
+var Anchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0__["default"].a(function (_ref) {
+  var dark = _ref.dark;
+  return {
+    cursor: 'pointer',
     textDecoration: 'none',
-    color: colors.seablue
-  }
+    color: dark ? colors.lightgray : colors.coolpurple,
+    ':hover': {
+      textDecoration: 'none',
+      color: dark ? 'white' : colors.darkpurpleHover
+    }
+  };
 });
 
 /***/ }),
@@ -12083,7 +12093,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n            html, body {\n                font-family: 'Merriweather Sans', sans-serif;\n                line-height: 1;\n                background-color: ", ";\n                color: ", ";\n            }\n\n            html { \n                height:100%;\n            }\n            body {\n                min-height:100%;\n                position:relative;\n            }\n            body::after{\n                content:'';\n                height: 100px;\n                display:block;\n            }\n        "]);
+  var data = _taggedTemplateLiteral(["\n            html, body {\n                font-family: 'Merriweather Sans', sans-serif;\n                line-height: 1.5;\n                background-color: ", ";\n                color: ", ";\n            }\n\n            html { \n                height:100%;\n            }\n            body {\n                min-height:100%;\n                margin: 0;\n                position:relative;\n            }\n            body::after{\n                content:'';\n                height: 100px;\n                display:block;\n            }\n            h1 {\n                font-size: 30px;\n            }\n            h2 {\n                font-size: 26px;\n                margin: 30px 0 15px;\n                font-weight: bold;\n            }\n            h3 {\n                font-size: 22px;\n                margin: 30px 0 10px;\n            }\n            hr {\n                border-right-width: initial;\n                border-bottom-width: initial;\n                border-left-width: initial;\n                border-right-color: initial;\n                border-bottom-color: initial;\n                border-left-color: initial;\n                margin: 50px 0px;\n                border-style: solid none none;\n                border-image: initial;\n                border-top: 1px solid rgb(211, 211, 211);\n                background: none;\n            }\n        "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -12192,7 +12202,7 @@ function (_App) {
       onClientBootstrap();
     }
 
-    Object(emotion__WEBPACK_IMPORTED_MODULE_4__["injectGlobal"])(_templateObject(), _components_shared_typography__WEBPACK_IMPORTED_MODULE_6__["colors"].lightblue, _components_shared_typography__WEBPACK_IMPORTED_MODULE_6__["colors"].darkgray);
+    Object(emotion__WEBPACK_IMPORTED_MODULE_4__["injectGlobal"])(_templateObject(), _components_shared_typography__WEBPACK_IMPORTED_MODULE_6__["colors"].lightgray, _components_shared_typography__WEBPACK_IMPORTED_MODULE_6__["colors"].darkgray);
     return _this;
   }
 
@@ -12205,59 +12215,59 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_3___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 70
+          lineNumber: 96
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 97
         },
         __self: this
       }, "Main Site")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_2__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 73
+          lineNumber: 99
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 74
+          lineNumber: 100
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(CommonFooter, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 76
+          lineNumber: 102
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(SocialMediaLink, {
         href: "https://www.linkedin.com/in/patrsmith/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 77
+          lineNumber: 103
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fab fa-linkedin",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 104
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(SocialMediaLink, {
         href: "https://github.com/pd-smith",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 80
+          lineNumber: 106
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("i", {
         className: "fab fa-github-square",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 107
         },
         __self: this
       }))));

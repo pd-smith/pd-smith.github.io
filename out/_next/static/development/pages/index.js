@@ -24,63 +24,125 @@ var _jsxFileName = "/Users/Patrick/workspace/pd-smith.github.io/components/share
 
 
 var LINKS = [{
-  title: 'Home',
-  href: '/'
-}, {
   title: 'Snippets',
   href: '/snippets'
 }];
 var HeaderLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_typography__WEBPACK_IMPORTED_MODULE_4__["Anchor"])(function (_ref) {
   var _ref$isSelected = _ref.isSelected,
       isSelected = _ref$isSelected === void 0 ? false : _ref$isSelected;
-  var borderBottom = isSelected ? "2px solid ".concat(_typography__WEBPACK_IMPORTED_MODULE_4__["colors"].darkblue) : 'none';
+  var backgroundColor = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].darkpurple : 'none';
   return {
-    margin: '0 30px',
-    padding: '10px 0',
-    fontWeight: 'bold',
-    borderBottom: borderBottom,
+    display: 'inline-block',
+    padding: '10px',
+    borderRadius: '5px',
+    transition: 'all 0.3s ease-in-out 0s',
+    marginLeft: '10px',
+    backgroundColor: backgroundColor,
+    opacity: '0.8',
     ':first-of-type': {
-      paddingLeft: '0'
+      marginLeft: '0'
     },
-    ':last-of-type': {
-      paddingRight: '0'
+    ':hover': {
+      opacity: '0.9'
     }
   };
+}, function (_ref2) {
+  var homeLink = _ref2.homeLink;
+  return homeLink ? {
+    fontSize: '18px',
+    opacity: 1,
+    ':hover': {
+      opacity: 1
+    }
+  } : {};
 });
-var HeaderContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div({
+var HeaderContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].header({
+  width: '100%',
+  padding: '30px 0px 0px',
+  flexShrink: 0,
+  zIndex: '10',
+  position: 'absolute',
+  top: '0px',
+  color: _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray
+});
+var Navigation = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].nav({
   display: 'flex',
-  justifyContent: 'flex-end',
-  padding: '0 150px'
+  justifyContent: 'space-between'
+});
+var NavigationAlignment = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div({
+  width: '100%',
+  maxWidth: '800px',
+  margin: '0px auto'
 });
 
-var Header = function Header(_ref2) {
-  var currentPageHref = _ref2.currentPageHref;
+var Header = function Header(_ref3) {
+  var currentPageHref = _ref3.currentPageHref;
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 67
     },
     __self: this
-  }, LINKS.map(function (_ref3) {
-    var title = _ref3.title,
-        href = _ref3.href;
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavigationAlignment, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Navigation, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
+    homeLink: true,
+    dark: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: this
+  }, "Pat Smith"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  }, LINKS.map(function (_ref4) {
+    var title = _ref4.title,
+        href = _ref4.href;
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_3___default.a, {
       key: title,
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43
+        lineNumber: 79
       },
       __self: this
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
+      dark: true,
       isSelected: currentPageHref === href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44
+        lineNumber: 80
       },
       __self: this
     }, title));
-  }));
+  })))));
 };
 
 Header.propTypes = {
@@ -105,20 +167,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _emotion_styled__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @emotion/styled */ "./node_modules/@emotion/styled/dist/styled.browser.esm.js");
 
 var colors = Object.freeze({
-  darkgray: '#2E3030',
+  darkgray: '#393939',
   lightblue: '#F2F5F9',
   seablue: '#47C1C3',
   darkblue: '#17325B',
-  red: '#DB202C',
-  lightbrown: '#D97844'
+  red: '#E85143',
+  blue: '#2D79DF',
+  honeyyellow: '#FFB800',
+  lightbrown: '#D97844',
+  lightgray: '#FAFAFA',
+  coolpurple: '#4B36DF',
+  darkpurple: '#231B43',
+  darkpurpleHover: '#4024D4'
 });
-var Anchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0__["default"].a({
-  cursor: 'pointer',
-  color: colors.darkblue,
-  ':hover': {
+var Anchor = _emotion_styled__WEBPACK_IMPORTED_MODULE_0__["default"].a(function (_ref) {
+  var dark = _ref.dark;
+  return {
+    cursor: 'pointer',
     textDecoration: 'none',
-    color: colors.seablue
-  }
+    color: dark ? colors.lightgray : colors.coolpurple,
+    ':hover': {
+      textDecoration: 'none',
+      color: dark ? 'white' : colors.darkpurpleHover
+    }
+  };
 });
 
 /***/ }),
@@ -12641,90 +12713,119 @@ var _jsxFileName = "/Users/Patrick/workspace/pd-smith.github.io/pages/index.jsx"
 
 
 
-var MainIntroContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div({
-  paddingTop: '150px'
+var SectionHeader = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].section({
+  paddingTop: '40px',
+  backgroundColor: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].darkpurple
 });
 var AccentBreak = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].hr({
-  borderColor: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].seablue,
-  maxWidth: '100px',
-  margin: '0 auto 0 0',
-  display: 'inherit'
-});
-var NameHeader = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].h2({
-  margin: '5px 0',
-  color: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].darkblue
+  width: '100px',
+  margin: '20px 0',
+  display: 'inline-block'
 });
 var TitleHeader = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].h1({
   margin: '5px 0',
-  color: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].darkblue
+  lineHeight: 1
 });
 var SubText = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].p({
-  fontSize: '14px',
+  fontSize: '18px',
+  margin: '5px 0',
   fontStyle: 'italic'
 });
+var AccentBox = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div({
+  backgroundColor: 'white',
+  maxWidth: '800px',
+  margin: '-20px auto 0px',
+  borderRadius: '5px',
+  padding: '40px 80px 60px'
+});
 var IntroBlock = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].main({
-  padding: '10px 10px 10px 10px',
   maxWidth: '600px',
-  margin: 'auto'
+  padding: '100px 40px 40px 40px',
+  margin: '0 auto',
+  color: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].lightgray
 });
 
 var IndexPage = function IndexPage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 42
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
+      lineNumber: 43
     },
     __self: this
   }, "Pat Smith")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_shared_header__WEBPACK_IMPORTED_MODULE_4__["default"], {
     currentPageHref: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(MainIntroContainer, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IntroBlock, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 43
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NameHeader, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44
-    },
-    __self: this
-  }, "PAT SMITH"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 45
     },
     __self: this
-  }, "SOFTWARE ENGINEER"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBreak, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionHeader, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubText, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IntroBlock, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47
     },
     __self: this
-  }, "Lover of all things web and beyond"))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48
+    },
+    __self: this
+  }, "Pat Smith"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 49
+    },
+    __self: this
+  }, "Software Engineer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBreak, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50
+    },
+    __self: this
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubText, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, "Lover of all things web and beyond"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBox, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55
+    },
+    __self: this
+  }, "Plans"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56
+    },
+    __self: this
+  }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57
+    },
+    __self: this
+  }, "The end goal of this page is to be extendable, accessible, and above all an avenue for learning. Next steps will be making this site into a PWA (Progressive Web Application)")));
 };
 
 IndexPage.displayName = 'IndexPage';
