@@ -1,6 +1,9 @@
 import React from 'react';
+import Head from 'next/head';
 import Header from '../components/shared/header';
 import LinkBrick from '../components/snippets/link-brick';
+import { colors } from '../components/shared/typography';
+import styled from '@emotion/styled';
 const SNIPPET_LINKS = [
     {
         title: 'Select All',
@@ -11,14 +14,27 @@ const SNIPPET_LINKS = [
         }
     }
 ];
+const SnippetHolder = styled.div({
+    margin: '30px auto',
+    maxWidth: '800px'
+});
+const SectionHeader = styled.section({
+    height: '100px',
+    backgroundColor: colors.coolpurple
+});
 const Snippets = () => (
     <>
-        <Header currentPageHref="/snippets" />
-        <div>
+        <Head>
+            <title>Code Snippets</title>
+        </Head>
+        <SectionHeader>
+            <Header currentPageHref="/snippets" />
+        </SectionHeader>
+        <SnippetHolder>
             {SNIPPET_LINKS.map(({ title, description, link }, index) => (
                 <LinkBrick key={index} {...{ title, description, link }} />
             ))}
-        </div>
+        </SnippetHolder>
     </>
 );
 Snippets.displayName = 'Snippets';

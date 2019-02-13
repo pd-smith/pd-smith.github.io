@@ -43,8 +43,8 @@ export default class MyApp extends App {
         injectGlobal`
             html, body {
                 font-family: 'Merriweather Sans', sans-serif;
-                line-height: 1;
-                background-color: ${colors.lightblue};
+                line-height: 1.5;
+                background-color: ${colors.lightgray};
                 color: ${colors.darkgray};
             }
 
@@ -53,12 +53,38 @@ export default class MyApp extends App {
             }
             body {
                 min-height:100%;
+                margin: 0;
                 position:relative;
             }
             body::after{
                 content:'';
                 height: 100px;
                 display:block;
+            }
+            h1 {
+                font-size: 30px;
+            }
+            h2 {
+                font-size: 26px;
+                margin: 30px 0 15px;
+                font-weight: bold;
+            }
+            h3 {
+                font-size: 22px;
+                margin: 30px 0 10px;
+            }
+            hr {
+                border-right-width: initial;
+                border-bottom-width: initial;
+                border-left-width: initial;
+                border-right-color: initial;
+                border-bottom-color: initial;
+                border-left-color: initial;
+                margin: 50px 0px;
+                border-style: solid none none;
+                border-image: initial;
+                border-top: 1px solid rgb(211, 211, 211);
+                background: none;
             }
         `;
     }

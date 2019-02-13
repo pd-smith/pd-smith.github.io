@@ -4,25 +4,21 @@ import styled from '@emotion/styled';
 import { Anchor, colors } from '../shared/typography';
 
 const SnippetContainer = styled.div({
-    maxWidth: '600px',
-    margin: '20px auto',
-    padding: '20px 0',
-    backgroundColor: '#e7eaef',
-    textAlign: 'center',
-    borderRadius: '5px',
-    boxShadow: '3px 2px 3px 1px #d0d1d4'
+    maxWidth: '800px',
+    padding: '40px',
+    backgroundColor: 'white',
+    borderRadius: '5px'
 });
+
 const SnippetTitle = styled.h2({
-    color: colors.darkblue,
-    margin: '10px 0'
+    color: colors.coolpurple
 });
-const SnippetDescription = styled.p();
-const SnippetLink = styled(Anchor)();
 const LinkBrick = ({ title, description, link }) => (
     <SnippetContainer>
         <SnippetTitle>{title}</SnippetTitle>
-        <SnippetDescription>{description}</SnippetDescription>
-        <SnippetLink href={link.href}>{link.title}</SnippetLink>
+        <p>{description}</p>
+        <hr />
+        <Anchor href={link.href}>{link.title}</Anchor>
     </SnippetContainer>
 );
 LinkBrick.displayName = 'LinkBrick';
