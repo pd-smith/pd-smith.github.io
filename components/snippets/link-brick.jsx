@@ -18,7 +18,9 @@ const LinkBrick = ({ title, description, link }) => (
         <SnippetTitle>{title}</SnippetTitle>
         <p>{description}</p>
         <hr />
-        <Anchor href={link.href}>{link.title}</Anchor>
+        <Anchor target="_blank" href={link.href}>
+            {link.title}
+        </Anchor>
     </SnippetContainer>
 );
 LinkBrick.displayName = 'LinkBrick';

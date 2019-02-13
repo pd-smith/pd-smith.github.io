@@ -100,10 +100,10 @@ export default class MyApp extends App {
                     <Component {...pageProps} />
                 </Container>
                 <CommonFooter>
-                    <SocialMediaLink href="https://www.linkedin.com/in/patrsmith/">
+                    <SocialMediaLink target="_blank" href="https://www.linkedin.com/in/patrsmith/">
                         <i className="fab fa-linkedin" />
                     </SocialMediaLink>
-                    <SocialMediaLink href="https://github.com/pd-smith">
+                    <SocialMediaLink target="_blank" href="https://github.com/pd-smith">
                         <i className="fab fa-github-square" />
                     </SocialMediaLink>
                 </CommonFooter>
