@@ -5,6 +5,7 @@ import { Anchor, colors } from '../shared/typography';
 
 const SnippetContainer = styled.div({
     maxWidth: '800px',
+    marginTop: '40px',
     padding: '40px',
     backgroundColor: 'white',
     borderRadius: '5px'
