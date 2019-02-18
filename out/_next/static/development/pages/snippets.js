@@ -19,6 +19,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./typography */ "./components/shared/typography.js");
 var _jsxFileName = "/Users/Patrick/workspace/pd-smith.github.io/components/shared/header.jsx";
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
 
 
 
@@ -27,43 +34,49 @@ var LINKS = [{
   title: 'Snippets',
   href: '/snippets'
 }];
-var HeaderLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_typography__WEBPACK_IMPORTED_MODULE_4__["Anchor"])(function (_ref) {
+var HeaderLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_typography__WEBPACK_IMPORTED_MODULE_4__["Anchor"])({
+  display: 'inline-block',
+  padding: '10px',
+  borderRadius: '5px'
+});
+var SectionLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(HeaderLink)(function (_ref) {
   var _ref$isSelected = _ref.isSelected,
       isSelected = _ref$isSelected === void 0 ? false : _ref$isSelected;
-  var backgroundColor = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].darkpurple : 'none';
+  var backgroundColor = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].coolpurple : 'none';
+  var color = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray : 'inherit';
   return {
-    display: 'inline-block',
-    padding: '10px',
-    borderRadius: '5px',
     transition: 'all 0.3s ease-in-out 0s',
     marginLeft: '10px',
     backgroundColor: backgroundColor,
+    color: color,
     opacity: '0.8',
     ':first-of-type': {
       marginLeft: '0'
     },
     ':hover': {
-      opacity: '0.9'
+      opacity: '0.9',
+      color: color
     }
   };
-}, function (_ref2) {
-  var homeLink = _ref2.homeLink;
-  return homeLink ? {
-    fontSize: '18px',
-    opacity: 1,
-    ':hover': {
-      opacity: 1
-    }
-  } : {};
 });
-var HeaderContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].header({
-  width: '100%',
-  padding: '30px 0px 0px',
-  flexShrink: 0,
-  zIndex: '10',
-  position: 'absolute',
-  top: '0px',
-  color: _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray
+var HomeLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(HeaderLink)({
+  fontSize: '18px',
+  opacity: 1,
+  ':hover': {
+    opacity: 1
+  }
+});
+var HeaderContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].header(function (_ref2) {
+  var dark = _ref2.dark;
+  return {
+    width: '100%',
+    padding: '30px 0px 0px',
+    flexShrink: 0,
+    zIndex: '10',
+    position: 'absolute',
+    top: '0px',
+    color: dark ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].coolpurple : _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray
+  };
 });
 var Navigation = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].nav({
   display: 'flex',
@@ -76,14 +89,17 @@ var NavigationAlignment = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"
 });
 
 var Header = function Header(_ref3) {
-  var currentPageHref = _ref3.currentPageHref;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContainer, {
+  var currentPageHref = _ref3.currentPageHref,
+      dark = _ref3.dark,
+      otherProps = _objectWithoutProperties(_ref3, ["currentPageHref", "dark"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContainer, _extends({}, otherProps, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 67
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavigationAlignment, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavigationAlignment, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 68
@@ -108,18 +124,18 @@ var Header = function Header(_ref3) {
       lineNumber: 71
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
-    homeLink: true,
-    dark: true,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomeLink, _extends({
+    dark: dark
+  }, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 72
     },
     __self: this
-  }, "Pat Smith"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), "Pat Smith"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 75
     },
     __self: this
   }, LINKS.map(function (_ref4) {
@@ -130,18 +146,19 @@ var Header = function Header(_ref3) {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 77
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
-      dark: true,
-      isSelected: currentPageHref === href,
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionLink, _extends({
+      dark: dark,
+      isSelected: currentPageHref === href
+    }, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 78
       },
       __self: this
-    }, title));
+    }), title));
   })))));
 };
 
@@ -170,13 +187,14 @@ var colors = Object.freeze({
   darkgray: '#393939',
   lightblue: '#F2F5F9',
   seablue: '#47C1C3',
+  prettypink: '#FFD6E5',
   darkblue: '#17325B',
   red: '#E85143',
   blue: '#2D79DF',
   honeyyellow: '#FFB800',
   lightbrown: '#D97844',
   lightgray: '#FAFAFA',
-  coolpurple: '#4B36DF',
+  coolpurple: '#5245C2',
   darkpurple: '#231B43',
   darkpurpleHover: '#4024D4'
 });
@@ -217,6 +235,7 @@ var _jsxFileName = "/Users/Patrick/workspace/pd-smith.github.io/components/snipp
 
 var SnippetContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div({
   maxWidth: '800px',
+  marginTop: '40px',
   padding: '40px',
   backgroundColor: 'white',
   borderRadius: '5px'
@@ -232,32 +251,33 @@ var LinkBrick = function LinkBrick(_ref) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SnippetContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17
+      lineNumber: 18
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SnippetTitle, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18
+      lineNumber: 19
     },
     __self: this
   }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 20
     },
     __self: this
   }, description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_shared_typography__WEBPACK_IMPORTED_MODULE_3__["Anchor"], {
+    target: "_blank",
     href: link.href,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: this
   }, link.title));
@@ -12800,6 +12820,13 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 var SNIPPET_LINKS = [{
+  title: 'Badges',
+  description: 'A simple POC for my best friend Nick! Our money making Badge scheme 😄',
+  link: {
+    title: 'CodePen',
+    href: 'https://codepen.io/pd-smith/details/VgGeXE'
+  }
+}, {
   title: 'Select All',
   description: 'A "back to basics" test of a select all checkbox.',
   link: {
@@ -12813,39 +12840,39 @@ var SnippetHolder = _emotion_styled__WEBPACK_IMPORTED_MODULE_5__["default"].div(
 });
 var SectionHeader = _emotion_styled__WEBPACK_IMPORTED_MODULE_5__["default"].section({
   height: '100px',
-  backgroundColor: _components_shared_typography__WEBPACK_IMPORTED_MODULE_4__["colors"].coolpurple
+  backgroundColor: _components_shared_typography__WEBPACK_IMPORTED_MODULE_4__["colors"].prettypink
 });
 
 var Snippets = function Snippets() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 35
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 36
     },
     __self: this
   }, "Code Snippets")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionHeader, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 38
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_shared_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     currentPageHref: "/snippets",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 39
     },
     __self: this
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SnippetHolder, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33
+      lineNumber: 41
     },
     __self: this
   }, SNIPPET_LINKS.map(function (_ref, index) {
@@ -12861,7 +12888,7 @@ var Snippets = function Snippets() {
     }, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 43
       },
       __self: this
     }));

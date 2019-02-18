@@ -19,6 +19,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _typography__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./typography */ "./components/shared/typography.js");
 var _jsxFileName = "/Users/Patrick/workspace/pd-smith.github.io/components/shared/header.jsx";
 
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
 
 
 
@@ -27,43 +34,49 @@ var LINKS = [{
   title: 'Snippets',
   href: '/snippets'
 }];
-var HeaderLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_typography__WEBPACK_IMPORTED_MODULE_4__["Anchor"])(function (_ref) {
+var HeaderLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(_typography__WEBPACK_IMPORTED_MODULE_4__["Anchor"])({
+  display: 'inline-block',
+  padding: '10px',
+  borderRadius: '5px'
+});
+var SectionLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(HeaderLink)(function (_ref) {
   var _ref$isSelected = _ref.isSelected,
       isSelected = _ref$isSelected === void 0 ? false : _ref$isSelected;
-  var backgroundColor = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].darkpurple : 'none';
+  var backgroundColor = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].coolpurple : 'none';
+  var color = isSelected ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray : 'inherit';
   return {
-    display: 'inline-block',
-    padding: '10px',
-    borderRadius: '5px',
     transition: 'all 0.3s ease-in-out 0s',
     marginLeft: '10px',
     backgroundColor: backgroundColor,
+    color: color,
     opacity: '0.8',
     ':first-of-type': {
       marginLeft: '0'
     },
     ':hover': {
-      opacity: '0.9'
+      opacity: '0.9',
+      color: color
     }
   };
-}, function (_ref2) {
-  var homeLink = _ref2.homeLink;
-  return homeLink ? {
-    fontSize: '18px',
-    opacity: 1,
-    ':hover': {
-      opacity: 1
-    }
-  } : {};
 });
-var HeaderContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].header({
-  width: '100%',
-  padding: '30px 0px 0px',
-  flexShrink: 0,
-  zIndex: '10',
-  position: 'absolute',
-  top: '0px',
-  color: _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray
+var HomeLink = Object(_emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"])(HeaderLink)({
+  fontSize: '18px',
+  opacity: 1,
+  ':hover': {
+    opacity: 1
+  }
+});
+var HeaderContainer = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].header(function (_ref2) {
+  var dark = _ref2.dark;
+  return {
+    width: '100%',
+    padding: '30px 0px 0px',
+    flexShrink: 0,
+    zIndex: '10',
+    position: 'absolute',
+    top: '0px',
+    color: dark ? _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].coolpurple : _typography__WEBPACK_IMPORTED_MODULE_4__["colors"].lightgray
+  };
 });
 var Navigation = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].nav({
   display: 'flex',
@@ -76,14 +89,17 @@ var NavigationAlignment = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"
 });
 
 var Header = function Header(_ref3) {
-  var currentPageHref = _ref3.currentPageHref;
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContainer, {
+  var currentPageHref = _ref3.currentPageHref,
+      dark = _ref3.dark,
+      otherProps = _objectWithoutProperties(_ref3, ["currentPageHref", "dark"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderContainer, _extends({}, otherProps, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 67
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavigationAlignment, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavigationAlignment, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 68
@@ -108,18 +124,18 @@ var Header = function Header(_ref3) {
       lineNumber: 71
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
-    homeLink: true,
-    dark: true,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomeLink, _extends({
+    dark: dark
+  }, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 72
     },
     __self: this
-  }, "Pat Smith"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }), "Pat Smith"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 77
+      lineNumber: 75
     },
     __self: this
   }, LINKS.map(function (_ref4) {
@@ -130,18 +146,19 @@ var Header = function Header(_ref3) {
       href: href,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79
+        lineNumber: 77
       },
       __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeaderLink, {
-      dark: true,
-      isSelected: currentPageHref === href,
+    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionLink, _extends({
+      dark: dark,
+      isSelected: currentPageHref === href
+    }, {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 80
+        lineNumber: 78
       },
       __self: this
-    }, title));
+    }), title));
   })))));
 };
 
@@ -170,13 +187,14 @@ var colors = Object.freeze({
   darkgray: '#393939',
   lightblue: '#F2F5F9',
   seablue: '#47C1C3',
+  prettypink: '#FFD6E5',
   darkblue: '#17325B',
   red: '#E85143',
   blue: '#2D79DF',
   honeyyellow: '#FFB800',
   lightbrown: '#D97844',
   lightgray: '#FAFAFA',
-  coolpurple: '#4B36DF',
+  coolpurple: '#5245C2',
   darkpurple: '#231B43',
   darkpurpleHover: '#4024D4'
 });
@@ -12715,7 +12733,7 @@ var _jsxFileName = "/Users/Patrick/workspace/pd-smith.github.io/pages/index.jsx"
 
 var SectionHeader = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].section({
   paddingTop: '40px',
-  backgroundColor: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].darkpurple
+  backgroundColor: _components_shared_typography__WEBPACK_IMPORTED_MODULE_3__["colors"].seablue
 });
 var AccentBreak = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].hr({
   width: '100px',
@@ -12734,6 +12752,7 @@ var SubText = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].p({
 var AccentBox = _emotion_styled__WEBPACK_IMPORTED_MODULE_2__["default"].div({
   backgroundColor: 'white',
   maxWidth: '800px',
+  boxShadow: '0px 10px 20px 1px #d3dcec',
   margin: '-20px auto 0px',
   borderRadius: '5px',
   padding: '40px 80px 60px'
@@ -12749,80 +12768,81 @@ var IndexPage = function IndexPage() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: this
   }, "Pat Smith")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_shared_header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    dark: true,
     currentPageHref: "/",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
-    },
-    __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionHeader, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IntroBlock, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SectionHeader, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IntroBlock, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 48
     },
     __self: this
-  }, "Pat Smith"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 49
     },
     __self: this
-  }, "Software Engineer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBreak, {
+  }, "Pat Smith"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TitleHeader, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 50
     },
     __self: this
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubText, {
+  }, "Software Engineer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBreak, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 51
     },
     __self: this
-  }, "Lover of all things web and beyond"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBox, {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SubText, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 52
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+  }, "Lover of all things web and beyond"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(AccentBox, {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 55
     },
     __self: this
-  }, "Plans"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 56
     },
     __self: this
-  }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "Plans"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 57
+    },
+    __self: this
+  }, "Homepage"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
     },
     __self: this
   }, "The end goal of this page is to be extendable, accessible, and above all an avenue for learning. Next steps will be making this site into a PWA (Progressive Web Application)")));
