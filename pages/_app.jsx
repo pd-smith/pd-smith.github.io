@@ -42,7 +42,7 @@ export default class MyApp extends App {
 
         injectGlobal`
             html, body {
-                font-family: 'Merriweather Sans', sans-serif;
+                font-family: 'Poppins', sans-serif;
                 line-height: 1.5;
                 background-color: ${colors.lightgray};
                 color: ${colors.darkgray};

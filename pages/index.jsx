@@ -6,7 +6,7 @@ import Header from '../components/shared/header';
 
 const SectionHeader = styled.section({
     paddingTop: '40px',
-    backgroundColor: colors.darkpurple
+    backgroundColor: colors.seablue
 });
 
 const AccentBreak = styled.hr({
@@ -27,6 +27,7 @@ const SubText = styled.p({
 const AccentBox = styled.div({
     backgroundColor: 'white',
     maxWidth: '800px',
+    boxShadow: '0px 10px 20px 1px #d3dcec',
     margin: '-20px auto 0px',
     borderRadius: '5px',
     padding: '40px 80px 60px'
@@ -42,7 +43,7 @@ const IndexPage = () => (
         <Head>
             <title>Pat Smith</title>
         </Head>
-        <Header currentPageHref="/" />
+        <Header dark currentPageHref="/" />
         <SectionHeader>
             <IntroBlock>
                 <TitleHeader>Pat Smith</TitleHeader>

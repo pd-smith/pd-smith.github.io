@@ -8,7 +8,8 @@ const SnippetContainer = styled.div({
     marginTop: '40px',
     padding: '40px',
     backgroundColor: 'white',
-    borderRadius: '5px'
+    borderRadius: '5px',
+    boxShadow: '0px 3px 7px 0px #d3dcec'
 });
 
 const SnippetTitle = styled.h2({

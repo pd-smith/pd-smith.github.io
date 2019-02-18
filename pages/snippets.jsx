@@ -28,7 +28,7 @@ const SnippetHolder = styled.div({
 });
 const SectionHeader = styled.section({
     height: '100px',
-    backgroundColor: colors.coolpurple
+    backgroundColor: colors.prettypink
 });
 const Snippets = () => (
     <>
