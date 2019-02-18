@@ -17,13 +17,14 @@ var colors = Object.freeze({
   darkgray: '#393939',
   lightblue: '#F2F5F9',
   seablue: '#47C1C3',
+  prettypink: '#FFD6E5',
   darkblue: '#17325B',
   red: '#E85143',
   blue: '#2D79DF',
   honeyyellow: '#FFB800',
   lightbrown: '#D97844',
   lightgray: '#FAFAFA',
-  coolpurple: '#4B36DF',
+  coolpurple: '#5245C2',
   darkpurple: '#231B43',
   darkpurpleHover: '#4024D4'
 });
@@ -12093,7 +12094,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n            html, body {\n                font-family: 'Merriweather Sans', sans-serif;\n                line-height: 1.5;\n                background-color: ", ";\n                color: ", ";\n            }\n\n            html { \n                height:100%;\n            }\n            body {\n                min-height:100%;\n                margin: 0;\n                position:relative;\n            }\n            body::after{\n                content:'';\n                height: 100px;\n                display:block;\n            }\n            h1 {\n                font-size: 30px;\n            }\n            h2 {\n                font-size: 26px;\n                margin: 30px 0 15px;\n                font-weight: bold;\n            }\n            h3 {\n                font-size: 22px;\n                margin: 30px 0 10px;\n            }\n            hr {\n                border-right-width: initial;\n                border-bottom-width: initial;\n                border-left-width: initial;\n                border-right-color: initial;\n                border-bottom-color: initial;\n                border-left-color: initial;\n                margin: 50px 0px;\n                border-style: solid none none;\n                border-image: initial;\n                border-top: 1px solid rgb(211, 211, 211);\n                background: none;\n            }\n        "]);
+  var data = _taggedTemplateLiteral(["\n            html, body {\n                font-family: 'Poppins', sans-serif;\n                line-height: 1.5;\n                background-color: ", ";\n                color: ", ";\n            }\n\n            html { \n                height:100%;\n            }\n            body {\n                min-height:100%;\n                margin: 0;\n                position:relative;\n            }\n            body::after{\n                content:'';\n                height: 100px;\n                display:block;\n            }\n            h1 {\n                font-size: 30px;\n            }\n            h2 {\n                font-size: 26px;\n                margin: 30px 0 15px;\n                font-weight: bold;\n            }\n            h3 {\n                font-size: 22px;\n                margin: 30px 0 10px;\n            }\n            hr {\n                border-right-width: initial;\n                border-bottom-width: initial;\n                border-left-width: initial;\n                border-right-color: initial;\n                border-bottom-color: initial;\n                border-left-color: initial;\n                margin: 50px 0px;\n                border-style: solid none none;\n                border-image: initial;\n                border-top: 1px solid rgb(211, 211, 211);\n                background: none;\n            }\n        "]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -12243,6 +12244,7 @@ function (_App) {
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(SocialMediaLink, {
+        target: "_blank",
         href: "https://www.linkedin.com/in/patrsmith/",
         __source: {
           fileName: _jsxFileName,
@@ -12257,6 +12259,7 @@ function (_App) {
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(SocialMediaLink, {
+        target: "_blank",
         href: "https://github.com/pd-smith",
         __source: {
           fileName: _jsxFileName,
