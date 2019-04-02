@@ -1,7 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import styled from '@emotion/styled';
-import { colors } from '../components/shared/typography';
+import { colors, Anchor } from '../components/shared/typography';
 import Header from '../components/shared/header';
 
 const SectionHeader = styled.section({
@@ -38,6 +39,16 @@ const IntroBlock = styled.main({
     margin: '0 auto',
     color: colors.lightgray
 });
+
+const DoddfatherLink = styled(Anchor)({
+    textDecoration: 'underline',
+    color: colors.lightgray,
+    ':hover': {
+        textDecoration: 'underline',
+        color: colors.lightgray
+    }
+});
+
 const IndexPage = () => (
     <>
         <Head>
@@ -49,15 +60,19 @@ const IndexPage = () => (
                 <TitleHeader>Pat Smith</TitleHeader>
                 <TitleHeader>Software Engineer</TitleHeader>
                 <AccentBreak />
-                <SubText>Lover of all things web and beyond</SubText>
+                <SubText>Software Engineer, Tech Enthusiast, Follower of <DoddfatherLink target="." href="https://kentcdodds.com">The Doddfather</DoddfatherLink></SubText>
             </IntroBlock>
         </SectionHeader>
         <AccentBox>
+            <h2>Readings</h2>
+            <p>
+                Check out some of my <Link href="/readings" passHref><Anchor>recommended readings</Anchor></Link>.
+            </p>
+            <hr/>
             <h2>Plans</h2>
             <h3>Homepage</h3>
             <p>
-                The end goal of this page is to be extendable, accessible, and above all an avenue for learning. Next
-                steps will be making this site into a PWA (Progressive Web Application)
+                The end goal of this page is to be extendable, accessible, and above all an avenue for learning.
             </p>
         </AccentBox>
     </>

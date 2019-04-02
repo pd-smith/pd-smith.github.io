@@ -8,6 +8,10 @@ const LINKS = [
     {
         title: 'Snippets',
         href: '/snippets'
+    },
+    {
+        title: 'Readings',
+        href: '/readings'
     }
 ];
 const HeaderLink = styled(Anchor)({
@@ -16,22 +20,24 @@ const HeaderLink = styled(Anchor)({
     borderRadius: '5px'
 });
 const SectionLink = styled(HeaderLink)(({ isSelected = false }) => {
-    const backgroundColor = isSelected ? colors.coolpurple : 'none';
-    const color = isSelected ? colors.lightgray : 'inherit';
-    return {
+    const styles = {
         transition: 'all 0.3s ease-in-out 0s',
         marginLeft: '10px',
-        backgroundColor,
-        color,
         opacity: '0.8',
+        background: 'none',
         ':first-of-type': {
             marginLeft: '0'
         },
         ':hover': {
-            opacity: '0.9',
-            color
+            opacity: '0.9'
         }
-    };
+    }
+    if (isSelected) {
+        styles.backgroundColor = colors.coolpurple;
+        styles.color = colors.lightgray;
+        styles[':hover'].color = colors.lightgray;
+    }
+    return styles;
 });
 
 const HomeLink = styled(HeaderLink)({
@@ -69,13 +75,13 @@ const Header = ({ currentPageHref, dark, ...otherProps }) => (
         <NavigationAlignment>
             <Navigation>
                 <div>
-                    <Link href="/">
+                    <Link href="/" passHref>
                         <HomeLink {...{ dark }}>Pat Smith</HomeLink>
                     </Link>
                 </div>
                 <div>
                     {LINKS.map(({ title, href }) => (
-                        <Link key={title} href={href}>
+                        <Link key={title} href={href} passHref>
                             <SectionLink {...{ dark, isSelected: currentPageHref === href }}>{title}</SectionLink>
                         </Link>
                     ))}
