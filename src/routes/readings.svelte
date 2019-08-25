@@ -5,20 +5,21 @@
     main {
         max-width: 800px;
         margin: 30px auto;
+        color: #218796;
     }
     section {
+        color: #43577d;
         max-width: 800px;
         margin-top: 40px;
         background-color: white;
-        box-shadow: rgb(211, 220, 236) 0px 3px 7px 0px;
+        box-shadow: rgb(158, 138, 156) 0px 3px 7px 0px;
         padding: 40px;
         border-radius: 5px;
     }
     section a {
         cursor: pointer;
         color: rgb(82, 69, 194);
-        display: block;
-        text-align: right;
+        float: right;
         text-decoration: none;
     }
     hr {

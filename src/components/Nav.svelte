@@ -12,10 +12,10 @@
 		z-index: 10;
 		position: absolute;
 		top: 0px;
-		color: #FAFAFA;
+		color: rgb(255, 214, 229);
 	}
 	nav.alt-nav {
-		color: rgb(82, 69, 194);
+		color: #218796;
 	}
 	div > .nav.alt-nav {
 		background-color: rgb(255, 214, 229);
@@ -43,10 +43,10 @@
 		display: inline-block;
 		margin-left: 10px;
 		opacity: 0.8;
-		color: rgb(250, 250, 250);
+		color: rgb(255, 214, 229);
 		text-decoration: none;
 		border-radius: 5px;
-		background: none rgb(82, 69, 194);
+		background:#218796;
 	}
 
 	a {
@@ -55,7 +55,7 @@
 		display: block;
 	}
 	div > .nav {
-		background-color: #47C1C3;
+		background-color: #218796;
 		height: 100px;
 		display: hidden;
 	}
@@ -72,7 +72,6 @@
 	<div class="links">
 		<a href=".">Pat Smith</a>
 		<ul>
-			<li><a class='{segment === "snippets" ? "selected" : ""}' href='snippets'>snippets</a></li>
 			<li><a class='{segment === "readings" ? "selected" : ""}' href='readings'>readings</a></li>
 		</ul>
 	</div>
