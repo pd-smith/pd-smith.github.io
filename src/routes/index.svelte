@@ -2,8 +2,12 @@
 	.title h1 {
 		font-size: 60px;
 		margin: 5px 0;
-    	line-height: 1;
-	}
+		line-height: 1;
+		animation-name: glitch;
+		animation-duration: 10s;
+		animation-iteration-count: infinite;
+		animation-fill-mode: backwards;
+		animation-direction: alternate;	}
 	.title h2 {
 		font-size: 30px;
 		margin: 5px 0;
@@ -18,6 +22,10 @@
 	.title {
     	background-color: #218796;
 	}
+	@keyframes glitch {
+		from {text-shadow: 5px 2px 1px #442986}
+		to {text-shadow: 4px 2px 3px rgb(160, 12, 245)}
+	}
 	
 </style>
 
@@ -29,7 +37,7 @@
   <script src="particles.js"></script>
 
 	<main>
-		<h1>Software Engineer</h1>
+		<h1 data-glitch="Software Engineer">Software Engineer</h1>
 		<h2>
 			Frontend | New York, NY
 		</h2>
