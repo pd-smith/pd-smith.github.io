@@ -12,15 +12,9 @@
 		z-index: 10;
 		position: absolute;
 		top: 0px;
-		color: rgb(255, 214, 229);
 	}
-	nav.alt-nav {
-		color: #218796;
-	}
-	div > .nav.alt-nav {
-		background-color: rgb(255, 214, 229);
-	}
-
+	
+	
 	ul {
 		margin: 0;
 		padding: 0;
@@ -42,35 +36,44 @@
 		cursor: pointer;
 		display: inline-block;
 		margin-left: 10px;
-		opacity: 0.8;
-		color: rgb(255, 214, 229);
 		text-decoration: none;
-		border-radius: 5px;
-		background:#218796;
+		background-color: #3f3d56;
 	}
 
 	a {
 		text-decoration: none;
 		padding: 1em 0.5em;
 		display: block;
+		border: 5px solid #3f3d56;
+	}
+	a:hover {
+		background-color: #3f3d56;
 	}
 	div > .nav {
-		background-color: #218796;
 		height: 100px;
 		display: hidden;
 	}
 	.links {
-		max-width: 800px;
+		max-width: 1200px;
+		padding: 0 20px;
 		margin: 0 auto;
 		display: flex;
 		justify-content: space-between;
+	}
+	.name, .name:hover {
+		border: none;
+		background: none;
 	}
 
 </style>
 
 <nav class='{Boolean(segment) === false ? "" : "alt-nav"}'>
 	<div class="links">
-		<a href=".">Pat Smith</a>
+		{#if Boolean(segment)}
+			<a class="name" href=".">Pat Smith</a>
+			{:else}
+			<div/>
+		{/if}
 		<ul>
 			<li><a class='{segment === "readings" ? "selected" : ""}' href='readings'>readings</a></li>
 		</ul>

@@ -5,20 +5,17 @@
     main {
         max-width: 800px;
         margin: 30px auto;
-        color: #218796;
     }
     section {
-        color: #43577d;
         max-width: 800px;
-        margin-top: 40px;
-        background-color: white;
-        box-shadow: rgb(158, 138, 156) 0px 3px 7px 0px;
+        margin-bottom: 40px;
+        background-color: #3f3d56;
         padding: 40px;
         border-radius: 5px;
     }
     section a {
         cursor: pointer;
-        color: rgb(82, 69, 194);
+        color: #f3ec59;
         float: right;
         text-decoration: none;
     }
@@ -35,17 +32,32 @@
         border-top: 1px solid rgb(211,211,211);
         background: none;
     }
+    .master-plan {
+		max-height: 200px;
+		max-width: 200px;
+    }
+    .flex {
+        display: flex;
+        justify-content: space-between;
+    }
+    .section-title {
+        align-self: flex-end;
+    }
 </style>
 <svelte:head>
 	<title>Readings</title>
 </svelte:head>
 
 <main>
-    <h1>Readings</h1>
-    <p>Here's a collection of readings that I've found useful.</p>
+    <div class="flex">
+        <div class="section-title"><h1>Readings</h1>
+    </div>
+        <img class="master-plan" src="/svg/post.svg" alt="post"/>
+    </div>
+    
     {#each readings as reading}
+    <h2>{reading.title}</h2>
         <section>
-          <h2>{reading.title}</h2>
           {#each reading.links as link}
             <h3>{link.linkTitle}</h3>
             <p>{link.description}</p>
