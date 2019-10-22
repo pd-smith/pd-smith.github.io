@@ -23,7 +23,12 @@
         display: inline-block;
         text-indent: -9999px;
         background-size: 40px;
-        background-color: whitesmoke;
+        background-color: #f2f2f2;
+    }
+    @media (prefers-color-scheme: light) {
+        .logo {
+            background-color: #0B0C10;
+        }
     }
     .linkedin {
         -webkit-mask-image: url(/svg/linkedin.svg);

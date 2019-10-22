@@ -38,6 +38,7 @@
 		margin-left: 10px;
 		text-decoration: none;
 		background-color: #3f3d56;
+		color: #f2f2f2
 	}
 
 	a {
@@ -48,6 +49,7 @@
 	}
 	a:hover {
 		background-color: #3f3d56;
+		color: #f2f2f2;
 	}
 	div > .nav {
 		height: 100px;
@@ -63,6 +65,7 @@
 	.name, .name:hover {
 		border: none;
 		background: none;
+		color: unset;
 	}
 
 </style>
