@@ -5,6 +5,7 @@
     main {
         max-width: 800px;
         margin: 30px auto;
+        overflow: hidden;
     }
     section {
         max-width: 800px;
@@ -32,9 +33,11 @@
         border-top: 1px solid rgb(211,211,211);
         background: none;
     }
-    .master-plan {
-		max-height: 200px;
-		max-width: 200px;
+    .readings {
+		height: 190px;
+		width: 200px;
+		background-size: cover;
+		background-image: url(/svg/post.svg);
     }
     .flex {
         display: flex;
@@ -43,6 +46,12 @@
     .section-title {
         align-self: flex-end;
     }
+    @media (max-width: 550px) {
+		.readings {
+			height: 45px;
+			width: 50px;
+		}
+	}
 </style>
 <svelte:head>
 	<title>Readings</title>
@@ -52,7 +61,7 @@
     <div class="flex">
         <div class="section-title"><h1>Readings</h1>
     </div>
-        <img class="master-plan" src="/svg/post.svg" alt="post"/>
+        <div class="readings" />
     </div>
     
     {#each readings as reading}

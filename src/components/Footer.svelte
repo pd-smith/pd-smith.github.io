@@ -14,7 +14,6 @@
         padding: 20px 0;
     }
     a:hover {
-       
         opacity: .8;
     }
     .logo {

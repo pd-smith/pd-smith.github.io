@@ -4,6 +4,13 @@
 	export let segment;
 </script>
 
+<style>
+	section {
+		padding: 40px;
+	}
+</style>
 <Nav {segment}/>
+<section>
 <slot></slot>
+</section>
 <Footer/>
