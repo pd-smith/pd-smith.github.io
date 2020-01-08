@@ -8,14 +8,17 @@ body::after{
 }
 
 body {
+	--text-color: #f2f2f2;
+	--background-color: #0B0C10;
+	--drop-shadow: 3px 3px 5px 1px #232335;
 	min-height:100%;
 	position: relative;
 	margin: 0;
 	font-family: 'Poppins', sans-serif;
 	font-size: 14px;
 	line-height: 1.5;
-	color: #f2f2f2;
-	background-color: #0B0C10;
+	color: var(--text-color);
+	background-color: var(--background-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -36,11 +39,38 @@ a {
     body {
         background-color: #f2f2f2;
 		color: #0B0C10;
-    }
+		--background-color: #f2f2f2;
+		--text-color: #0B0C10;
+		--drop-shadow: 3px 3px 5px 1px #b3b3b3;
+	}
+}
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
 
-@media (min-width: 400px) {
+.grid-cramped {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 700px) {
 	body {
 		font-size: 16px;
+	}
+	.grid {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 500px) {
+	body {
+		font-size: 16px;
+	}
+	.grid {
+		grid-template-columns: 1fr;
 	}
 }

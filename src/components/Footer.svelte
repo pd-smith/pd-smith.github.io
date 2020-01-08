@@ -14,21 +14,17 @@
         padding: 20px 0;
     }
     a:hover {
-        opacity: .8;
+        background-color: pink;
     }
     .logo {
         transition: 100ms;
         height: 40px;
         width: 40px;
         display: inline-block;
+        transition: 175ms;
         text-indent: -9999px;
         background-size: 40px;
-        background-color: #f2f2f2;
-    }
-    @media (prefers-color-scheme: light) {
-        .logo {
-            background-color: #0B0C10;
-        }
+        background-color: var(--text-color);
     }
     .linkedin {
         -webkit-mask-image: url(/svg/linkedin.svg);
